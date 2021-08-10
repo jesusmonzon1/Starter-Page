@@ -21,20 +21,31 @@ body {
 }
 .box {
   padding: 10px;
+  width: 400px;
 }
-#box1 {
+#boxA {
+  background-color: blue;
   display: flex;
-  align-items: center;
-  background-color: white;
+  flex-direction: row;
+  justify-content: space-between;
 }
-#box2 {
-  padding-right: 100px;
+#boxB {
+  background-color: red;
+}
+
+#search-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+#search {
+  padding-left: 50px;
 }
 .row {
   display: flex;
   flex-direction: row;
   background-color: white;
 }
-.row-item {
+.bookmark{
   padding: 0px 10px;
 }
