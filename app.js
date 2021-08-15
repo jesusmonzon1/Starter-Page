@@ -13,6 +13,32 @@ function currentTime() {
 currentTime();
 
 
+// Search Engine Select
+function getEngine() {
+  let engine = document.getElementById("dropdown");
+  const checkValue = engine.options[engine.selectedIndex].value;
+  console.log(checkValue);
+}
+getEngine();
+
+// Actual Search
+let input = document.getElementById("search");
+input.addEventListener("keydown", function(e) {
+  if (e.code === "Enter") {
+    engineSearch(e);
+  }
+})
+function engineSearch(e) {
+  let query = e.target.value;
+  console.log(query);
+  url = `https://www.google.com/search?q=${query}`
+  window.location.replace(url);
+}
+
+
+
+
+
 // Bookmarks
 
 let bookmarksList = [
@@ -33,10 +59,6 @@ let bookmarksList = [
     link: "https://www.evernote.com/client/web?login=true#?hm=true&",
   }
 ]
-
-
-
-
 
 function bookmarks() {
   for (const book of bookmarksList) {

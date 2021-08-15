@@ -23,10 +23,20 @@
     </div>
 
     <div id="search-box" class="box">
-      <div>Select</div>
+      <div class="dropdown">
+        <form id="search-engine" method="get">
+          <select id="dropdown">
+            <option value="google">Google</option>
+            <option value="youtube">Youtube</option>
+            <option value="reddit">Reddit</option>
+            <option value="stack">Stack Overflow</option>
+          </select>
+        </form>
+      </div>
+
       <div>
-        <form id="search" method="get">
-        <input autofocus="on" autocomplete="off"/>
+        <form id="search" method="get" >
+          <input type="text" autofocus="on" autocomplete="off"/>
         </form>
       </div>
     </div>
