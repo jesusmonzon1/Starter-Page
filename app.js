@@ -12,35 +12,67 @@ function currentTime() {
 }
 currentTime();
 
+// Weather
+function Weather() {
+  let city = "Yuma";
+  let apiKey = "";
 
-// Search Engine Select
-function getEngine() {
-  let engine = document.getElementById("dropdown");
-  const checkValue = engine.options[engine.selectedIndex].value;
-  console.log(checkValue);
-}
-getEngine();
-
-// Actual Search
-let input = document.getElementById("search");
-input.addEventListener("keydown", function(e) {
-  if (e.code === "Enter") {
-    engineSearch(e);
+  async function getWeather() {
+    let response = fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`);
+    let responseData = (await response).json();
+    return responseData;
   }
-})
-function engineSearch(e) {
-  let query = e.target.value;
-  console.log(query);
-  url = `https://www.google.com/search?q=${query}`
-  window.location.replace(url);
+  getWeather().then(responseData => console.log(responseData));
+  
+  
 }
+Weather();
 
 
 
-
+// Search
+function searchEngine() {
+  let input = document.getElementById("search");
+  input.addEventListener("keydown", function(e) {
+    if (e.code === "Enter" || e.code === 13) {
+      // Get the text from search bar
+      let query = e.target.value;
+      // Identify which engine was selected in droopdown
+      let engine = document.getElementById("dropdown");
+      const checkValue = engine.options[engine.selectedIndex].value;
+      // Provide cases for each value in dropdown
+      switch(checkValue) {
+        case "google":
+          url = `https://www.google.com/search?q=${query}`
+          window.location.replace(url);
+          break;
+        case "youtube":
+          url = `https://www.youtube.com/results?search_query=${query}`
+          window.location.replace(url);
+          break;
+        case "reddit":
+          url = `https://www.reddit.com/search?q=${query}`
+          window.location.replace(url);
+          break;
+        case "stack":
+          url = `https://stackoverflow.com/search?q=${query}`
+          window.location.replace(url);
+          break;
+        case "wiki":
+          url = `https://en.wikipedia.org/wiki/${query}`
+          window.location.replace(url);
+          break;
+        default:
+          console.log('Error in selection')
+          break;
+      }
+    }
+  });
+}
+searchEngine();
 
 // Bookmarks
-
+// This array gets looped in below bookmarks function.
 let bookmarksList = [
   {
     name: "Bank",
@@ -76,5 +108,4 @@ function bookmarks() {
     document.getElementById("bookmarkHold").appendChild(bookmarkLink);
   }
 };
-
 bookmarks();
