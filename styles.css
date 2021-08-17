@@ -1,11 +1,12 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: monospace;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
 }
 body {
   background-color: #1c1e25;
-  color: green;
+  color: white;
   font-size: 24px;
   display: flex;
   flex-direction: column;
@@ -23,28 +24,73 @@ body {
   padding: 10px;
   width: 400px;
 }
+#time {
+  font-size: 65px;
+}
 #boxA {
-  background-color: blue;
+  /* background-color: blue; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 #boxB {
-  background-color: red;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
 }
+#bitcoin {
+  padding-left: 3px;
+  font-size: 30px;
+}
+/* form and input box */
 #search-box {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 }
+input, textarea, select {
+  font-family:inherit;
+  font-size: inherit;
+  font-size: 20px;
+  color: white;
+}
 #search {
-  padding-left: 50px;
+  background-color: #666666;
+  padding: 1px;
+  margin-left: 30px;
+  border: 0;
+  border-radius: 5px;
+  width: 100%;
+}
+select {
+  background-color: #666666;
+  border-radius: 5px;
 }
 .row {
   display: flex;
   flex-direction: row;
-  background-color: white;
+  justify-content: space-around;
+  /* background-color: white; */
 }
 .bookmark{
-  padding: 0px 10px;
+  margin: 10px;
+  width: 100%;
 }
+a {
+  text-decoration: none;
+}
+ a:link {
+  color: white;
+}
+a:visited {
+  color: white;
+}
+a:hover {
+  color: white;
+}
+a:active {
+  color: white;
+} 

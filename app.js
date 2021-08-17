@@ -12,24 +12,6 @@ function currentTime() {
 }
 currentTime();
 
-// Weather
-function Weather() {
-  let city = "Yuma";
-  let apiKey = "";
-
-  async function getWeather() {
-    let response = fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`);
-    let responseData = (await response).json();
-    return responseData;
-  }
-  getWeather().then(responseData => console.log(responseData));
-  
-  
-}
-Weather();
-
-
-
 // Search
 function searchEngine() {
   let input = document.getElementById("search");

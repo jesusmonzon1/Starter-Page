@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Roboto Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet"> 
+  <!-- Font awesome icons -->
+  <script src="https://kit.fontawesome.com/873227bf87.js" crossorigin="anonymous"></script>
+
   <link rel ="stylesheet" type="text/css" href="styles.css">
 
   <title>Starter Page</title>
@@ -14,11 +21,16 @@
     <div class="box">
       <div id="boxA">
         <div id="time"></div>
-        <div id="weather">weather</div>
+        <div class="boxB">
+          <div id="weather-temp"></div>
+          <div id="weather-desc"></div>
+          <div id="weather-wind"></div>
+        </div>
       </div>
       <div id="boxB">
-        <div id="bitcoin">todays bitcoin price</div>
-        <div id="sp">The s&p is</div>
+        <i class="fab fa-btc"></i>
+          <div id="bitcoin"></div>
+        
       </div>
     </div>
 
@@ -42,12 +54,12 @@
 
     <div>
       <div class="row" id="bookmarkHold">
-        <!-- function Bookmarks fires here to populate bookmarks -->
       </div> 
     </div>
 
   </div>
   
   <script src="app.js"></script>
+  <script src="api.js"></script>
 </body>
 </html>
