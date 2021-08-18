@@ -10,15 +10,18 @@ class UI {
   }
 
   display(weather) {
+    // Temp and split the decimal
     this.temp.textContent = weather.main.temp;
-    this.temp.textContent = `${this.temp.textContent.slice(0, -3)} F`;
-
+    let newSplit = this.temp.textContent;
+    this.temp.textContent = `${newSplit.split(".")[0]} F`;
+    // Get description, ie 'few clouds'
     this.desc.textContent = weather.weather[0].description;
-    
+    // Get wind
     this.wind.textContent = weather.wind.speed
     this.wind.textContent = `wind ${this.wind.textContent.slice(0,2)} mph`;
   }
   displayNumbers(bitcoin) {
+    // Get current exchange rate for USD to bitcoin
     this.price.textContent = bitcoin["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
     this.price.textContent = `${this.price.textContent.slice(0,-9)}`;
   }
@@ -33,6 +36,7 @@ function weather() {
   async function getWeather() {
     let response = fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`);
     let weather = (await response).json();
+    console.log(weather);
     return weather;
   }
   getWeather().then(weather => ui.display(weather));
@@ -49,6 +53,5 @@ function bitcoin() {
     return bitcoin;
   }
   getBitcoin().then(bitcoin => ui.displayNumbers(bitcoin))
-  // getBitcoin().then(bitcoin => console.log(bitcoin["Realtime Currency Exchange Rate"]["5. Exchange Rate"]))
 }
 bitcoin();

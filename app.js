@@ -1,14 +1,20 @@
 // Time
 function currentTime() {
+  var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
   var today = new Date()
   
-  // https://www.plus2net.com/javascript_tutorial/clock.php
+  var weekday = weekday[today.getDay()];
+  var month = months[today.getMonth()];
+  var day = today.getDate()
   var minutes = today.getMinutes().toString()
   minutes = minutes.length == 1 ? 0 + minutes : minutes;
 
   var time = today.getHours() + ":" + minutes;
   document.getElementById('time').innerHTML = time;
-  setTimeout("currentTime()",100)
+  document.getElementById('days').innerHTML = `${weekday} ${month} ${day}`;
+  setTimeout("currentTime()",1000)
 }
 currentTime();
 
@@ -34,6 +40,10 @@ function searchEngine() {
           break;
         case "reddit":
           url = `https://www.reddit.com/search?q=${query}`
+          window.location.replace(url);
+          break;
+        case "genius":
+          url = `https://genius.com/search?q=${query}`
           window.location.replace(url);
           break;
         case "stack":

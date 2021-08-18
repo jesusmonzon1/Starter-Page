@@ -22,7 +22,7 @@ body {
 }
 .box {
   padding: 10px;
-  width: 400px;
+  width: 500px;
 }
 #time {
   font-size: 65px;
@@ -34,12 +34,16 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-#boxB {
+#boxB, #boxC {
   /* background-color: red; */
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 30px;
+}
+#boxC {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 #bitcoin {
   padding-left: 3px;
@@ -50,6 +54,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  padding: 20px 0px 20px 0;
 }
 input, textarea, select {
   font-family:inherit;
@@ -59,17 +64,26 @@ input, textarea, select {
 }
 #search {
   background-color: #666666;
-  padding: 1px;
+  padding: 2px;
   margin-left: 30px;
   border: 0;
   border-radius: 5px;
   width: 100%;
+  width: 400px;
 }
 select {
-  background-color: #666666;
+  border: 0;
+  padding: 2px;
+  background-color: #1c1e25;
   border-radius: 5px;
+  width: 80%;
+  width: 125px;
+}
+select:hover {
+  background-color: #666666;
 }
 .row {
+  padding-top: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -90,6 +104,8 @@ a:visited {
 }
 a:hover {
   color: white;
+  text-decoration: underline white solid;
+  text-decoration-thickness: 3px;
 }
 a:active {
   color: white;
