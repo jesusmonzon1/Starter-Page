@@ -6,4 +6,4 @@ Inspired by the community at [R/Starterpages](https://www.reddit.com/r/startpage
 For your own use please provide your API keys in the file api.js and your own bookmarks in file app.js. Currently the bitcoin markup is commented out because of my personal preference.
 
 #### Demo
-![Starter Page Demo](https://imgur.com/a/CswHYEZ)
+![Starter Page Demo](https://i.imgur.com/yVpjpvg.gif)
