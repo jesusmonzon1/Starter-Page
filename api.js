@@ -18,7 +18,8 @@ class UI {
     this.desc.textContent = weather.weather[0].description;
     // Get wind
     this.wind.textContent = weather.wind.speed
-    this.wind.textContent = `wind ${this.wind.textContent.slice(0,2)} mph`;
+    let windSplit = this.wind.textContent;
+    this.wind.textContent = `wind ${windSplit.split(".")[0]} mph`;
   }
   displayNumbers(bitcoin) {
     // Get current exchange rate for USD to bitcoin
